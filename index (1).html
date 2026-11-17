@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김하은 · 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F3FAFB; --surface:#FFFFFF; --ink:#0B2A3C; --muted:#4F6D7C; --line:#CFE5EA;
+  --deep:#0E4C6B; --aqua:#19B5C8; --coral:#FF6B57; --hero-ink:#FFFFFF;
+  --w1:#1C86A6; --w2:#34B8CF;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#08171F;--surface:#0F2530;--ink:#E6F4F7;--muted:#92AEBA;--line:#1C3B49;--deep:#0A3347;--aqua:#4FD1E0;--coral:#FF8272;--w1:#14607B;--w2:#1D8DA3;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#08171F;--surface:#0F2530;--ink:#E6F4F7;--muted:#92AEBA;--line:#1C3B49;--deep:#0A3347;--aqua:#4FD1E0;--coral:#FF8272;--w1:#14607B;--w2:#1D8DA3;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.75;word-break:keep-all}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.display{font-family:"Do Hyeon","IBM Plex Sans KR",sans-serif;font-weight:400}
+
+/* header */
+.bar{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar .in{max-width:960px;margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:16px}
+.bar .logo{font-size:22px;text-decoration:none;color:var(--ink);margin-right:auto}
+.bar nav{display:flex;gap:4px;overflow-x:auto}
+.bar nav a{padding:6px 14px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:15px;white-space:nowrap}
+.bar nav a:hover{color:var(--ink)}
+.bar nav a.on{background:var(--deep);color:#fff}
+.theme{font:inherit;font-size:14px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{background:var(--deep);color:var(--hero-ink);position:relative;overflow:hidden}
+.hero .in{max-width:960px;margin:0 auto;padding:96px 24px 190px;position:relative;z-index:2}
+.hero h1{margin:0 0 20px;font-size:clamp(52px,12vw,112px);line-height:1.05;letter-spacing:-.01em}
+.hero p{margin:0 0 8px;font-size:clamp(18px,2.6vw,24px);max-width:24em}
+.hero .sub{opacity:.8;font-size:16px;margin-bottom:32px}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;background:var(--coral);color:#fff;text-decoration:none;font-weight:700}
+.waves{position:absolute;left:0;right:0;bottom:-1px;height:150px;z-index:1}
+.waves svg{position:absolute;bottom:0;left:0;width:200%;height:100%}
+.waves .a{animation:drift 26s linear infinite}
+.waves .b{animation:drift 17s linear infinite reverse;opacity:.9}
+@keyframes drift{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.waves svg{animation:none!important}html{scroll-behavior:auto}}
+
+/* lane rope divider */
+.rope{height:8px;max-width:960px;margin:0 auto;border-radius:4px;background:repeating-linear-gradient(90deg,var(--coral) 0 36px,var(--surface) 36px 72px,var(--aqua) 72px 108px,var(--surface) 108px 144px);opacity:.9}
+
+section{max-width:960px;margin:0 auto;padding:72px 24px}
+h2{font-size:clamp(32px,5vw,44px);line-height:1.2;margin:0 0 32px}
+.two{display:grid;grid-template-columns:220px 1fr;gap:16px 40px}
+.two h2{margin:0}
+p{margin:0 0 16px;max-width:36em}
+dl{margin:24px 0 0;display:grid;grid-template-columns:96px 1fr;gap:10px 16px;max-width:36em}
+dt{color:var(--muted)}
+dd{margin:0;font-weight:500}
+
+.strength{font-size:clamp(22px,3.6vw,32px);line-height:1.45;max-width:20em;margin:0 0 40px;font-weight:700}
+.exp{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.exp li{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;padding:22px 0;border-bottom:1px solid var(--line);font-size:20px;font-weight:500}
+.exp svg{width:44px;height:44px;color:var(--aqua)}
+.exp small{display:block;font-size:15px;color:var(--muted);font-weight:400}
+
+.proj{padding:28px 0;border-top:1px solid var(--line)}
+.proj h3{margin:0 0 10px;font-size:22px;line-height:1.4}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:8px 0 0}
+.tags li{font-size:14px;padding:2px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+
+.goal{background:var(--deep);color:#fff;border-radius:24px;padding:56px 40px}
+.goal h2{margin-bottom:20px}
+.goal .big{font-size:clamp(26px,4.6vw,44px);line-height:1.35;margin:0 0 16px;max-width:16em}
+.goal p{opacity:.85}
+
+footer{max-width:960px;margin:0 auto;padding:24px 24px 56px;color:var(--muted);font-size:14px}
+@media (max-width:760px){
+  .two{grid-template-columns:1fr}
+  .hero .in{padding:64px 24px 170px}
+  .goal{padding:40px 24px}
+  .bar .in{padding:10px 16px;gap:8px}
+}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="in">
+    <a class="logo display" href="#home">김하은</a>
+    <nav aria-label="섹션 이동">
+      <a href="#home">홈</a><a href="#about">자기소개</a><a href="#skills">역량</a><a href="#projects">프로젝트</a><a href="#goal">진로 목표</a>
+    </nav>
+    <button class="theme" id="theme" type="button" aria-label="화면 밝기 바꾸기">다크 모드</button>
+  </div>
+</header>
+
+<main>
+<div class="hero" id="home">
+  <div class="in">
+    <h1 class="display">김하은</h1>
+    <p>웃으면서 어떤 일이든 해내는 사람입니다.</p>
+    <p class="sub">레저해양스포츠학과 · 수영과 물을 좋아합니다</p>
+    <a class="btn" href="#about">자기소개 보기</a>
+  </div>
+  <div class="waves" aria-hidden="true">
+    <svg class="a" viewBox="0 0 2400 150" preserveAspectRatio="none"><path fill="var(--w1)" d="M0 70 q150 -50 300 0 t300 0 t300 0 t300 0 t300 0 t300 0 t300 0 t300 0 V150 H0Z"/></svg>
+    <svg class="b" viewBox="0 0 2400 150" preserveAspectRatio="none"><path fill="var(--w2)" d="M0 100 q150 -44 300 0 t300 0 t300 0 t300 0 t300 0 t300 0 t300 0 t300 0 V150 H0Z"/></svg>
+    <svg viewBox="0 0 2400 150" preserveAspectRatio="none" style="width:100%"><path fill="var(--bg)" d="M0 128 H2400 V150 H0Z"/></svg>
+  </div>
+</div>
+
+<section id="about">
+  <div class="two">
+    <h2 class="display">자기소개</h2>
+    <div>
+      <p>안녕하세요, 레저해양스포츠학과 김하은입니다. 수영과 물에 관련된 것들에 관심이 많습니다.</p>
+      <p>무슨 일이든 웃으면서 해낼 수 있다는 자신감이 저의 가장 큰 강점입니다.</p>
+      <dl>
+        <dt>이름</dt><dd>김하은</dd>
+        <dt>전공</dt><dd>레저해양스포츠학과</dd>
+        <dt>관심 분야</dt><dd>수영, 물과 관련된 것</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+<div class="rope" aria-hidden="true"></div>
+
+<section id="skills">
+  <h2 class="display">역량</h2>
+  <p class="strength">웃으면서 어떤 일이든 할 수 있는 자신감</p>
+  <ul class="exp">
+    <li>
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="6"/><path d="M12.7 12.7l7 7M28.3 28.3l7 7M35.3 12.7l-7 7M19.7 28.3l-7 7"/></svg>
+      <div>라이프가드 근무 경험</div>
+    </li>
+    <li>
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M4 30c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4"/><path d="M4 40c5 0 5-4 10-4s5 4 10 4 5-4 10-4 5 4 10 4"/><circle cx="30" cy="12" r="4"/><path d="M14 22l10-6 8 4"/></svg>
+      <div>수영 강사 경험</div>
+    </li>
+    <li>
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M14 6v14c0 3 2 5 4 5v17M14 6v10M22 6v10M18 6v19M34 42V6c-5 3-7 9-7 16h7"/></svg>
+      <div>식당 아르바이트 경험</div>
+    </li>
+  </ul>
+</section>
+<div class="rope" aria-hidden="true"></div>
+
+<section id="projects">
+  <h2 class="display">프로젝트</h2>
+  <article class="proj">
+    <h3>AI 포즈 마스터</h3>
+    <p>MediaPipe로 웹캠 속 관절을 읽고, 화면에 나온 목표 자세를 얼마나 비슷하게 따라 했는지 관절 각도로 점수를 매기는 게임입니다. 스쿼트, 런지, 한 발 균형잡기 자세를 사용합니다.</p>
+    <ul class="tags"><li>MediaPipe</li><li>웹캠</li><li>관절 각도 점수</li></ul>
+  </article>
+  <article class="proj">
+    <h3>무궁화 꽃이 피었습니다 포즈 챌린지</h3>
+    <p>정해진 자세를 따라 하는 HTML 게임입니다. 혼자 하는 모드와 2인 모드, 쉬움과 어려움 난이도가 있습니다. 생명은 3개이고, 5번 성공하면 술래가 도착합니다. 자세는 스쿼트, 런지, 한발서기, 만세입니다.</p>
+    <ul class="tags"><li>HTML</li><li>싱글·멀티 모드</li></ul>
+  </article>
+</section>
+<div class="rope" aria-hidden="true"></div>
+
+<section id="goal">
+  <div class="goal">
+    <h2 class="display">진로 목표</h2>
+    <p class="big display">안 아프고, 일단 행복하게 살고 싶습니다.</p>
+    <p>웃으면서 일할 수 있는 건강한 하루를 쌓아 가는 것이 제 목표입니다.</p>
+  </div>
+</section>
+</main>
+
+<footer>© 2026 김하은</footer>
+
+<script>
+(function(){
+  var links=[].slice.call(document.querySelectorAll(".bar nav a"));
+  var targets=links.map(function(a){return document.querySelector(a.getAttribute("href"))});
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var i=targets.indexOf(e.target);
+          links.forEach(function(l,j){l.classList.toggle("on",j===i);if(j===i)l.setAttribute("aria-current","true");else l.removeAttribute("aria-current")});
+        }
+      });
+    },{rootMargin:"-45% 0px -50% 0px"});
+    targets.forEach(function(t){if(t)io.observe(t)});
+  }
+  var btn=document.getElementById("theme"),root=document.documentElement;
+  var dark=window.matchMedia("(prefers-color-scheme: dark)").matches;
+  try{var s=localStorage.getItem("theme");if(s)dark=s==="dark"}catch(e){}
+  function apply(){root.setAttribute("data-theme",dark?"dark":"light");btn.textContent=dark?"라이트 모드":"다크 모드"}
+  btn.addEventListener("click",function(){dark=!dark;apply();try{localStorage.setItem("theme",dark?"dark":"light")}catch(e){}});
+  apply();
+})();
+</script>
+</body>
+</html>
